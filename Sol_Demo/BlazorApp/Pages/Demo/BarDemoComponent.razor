@@ -1,0 +1,26 @@
+﻿@if (this.IsLoad == false)
+{
+    <h1>Loading..</h1>
+}
+else
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <button class="btn btn-dark" @onclick="this.OnDisplayStudentChart">Show Student Chart</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <BarChartComponent @ref="this.BarStudentMark"
+                                   BarsColor="#222"
+                                   Height="400px"
+                                   RowsCount="8"
+                                   RowCaptionsWidth="40px"
+                                   AnimationDelay="10"
+                                   Data="this.BarChartResultSets">
+                </BarChartComponent>
+            </div>
+        </div>
+    </div>
+}
